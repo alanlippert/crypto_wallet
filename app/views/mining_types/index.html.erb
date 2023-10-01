@@ -1,0 +1,29 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Mining types</h1>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th> Description </th>
+        <th> Acronym </th>        
+      </tr>
+    </thead>
+    
+    <tbody>
+      <% @mining_types.each do |mining_type| %>
+        <tr>
+          <td><%= mining_type.description %></td>
+          <td><%= mining_type.acronym %></td>          
+          <td><%= link_to 'show', mining_type, class: "btn btn-xs btn-primary" %></td>
+          <td><%= link_to 'edit', edit_coin_path(mining_type), class: "btn btn-xs btn-primary" %></td>
+          <td><%= link_to 'delete', mining_type, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: "btn btn-xs btn-primary" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+
+<p><%= link_to "New coin", new_mining_type_path %></p>
+<p><%= link_to 'Back', root_path %></p>
