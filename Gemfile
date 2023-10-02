@@ -28,6 +28,9 @@ gem "stimulus-rails"
 gem "jbuilder"
 gem "tty-spinner"
 gem "rubocop"
+gem "rails-i18n"
+gem "bootstrap"
+gem "execjs"
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"

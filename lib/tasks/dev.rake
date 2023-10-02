@@ -17,9 +17,9 @@ namespace :dev do
   desc "Cadastra as moedas"
   task add_coins: :environment do
     show_spinner("Cadastrando moedas...") do
-      add_coins("Bitcoin", "BTC", "https://cryptologos.cc/logos/bitcoin-btc-logo.png")
-      add_coins("Ethereum", "ETH", "https://cryptologos.cc/logos/ethereum-eth-logo.png")
-      add_coins("Dash", "DASH", "https://cryptologos.cc/logos/dash-dash-logo.png")
+      add_coins("Bitcoin", "BTC", "https://cryptologos.cc/logos/bitcoin-btc-logo.png", 1)
+      add_coins("Ethereum", "ETH", "https://cryptologos.cc/logos/ethereum-eth-logo.png", 2)
+      add_coins("Dash", "DASH", "https://cryptologos.cc/logos/dash-dash-logo.png", 3)
     end
   end
 
@@ -39,11 +39,12 @@ namespace :dev do
     spinner.success("(Concluído!)")
   end
 
-  def add_coins(description, acronym, url_image)
+  def add_coins(description, acronym, url_image, mining_type_id)
     Coin.find_or_create_by!(
       description: description,
       acronym: acronym,
-      url_image: url_image
+      url_image: url_image,
+      mining_type_id: mining_type_id
     )
   end
 

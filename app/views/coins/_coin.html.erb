@@ -1,0 +1,22 @@
+<div id="<%= dom_id coin %>">
+  <p>
+    <strong><%= t('description') %>:</strong>
+    <%= coin.description %>
+  </p>
+
+  <p>
+    <strong><%= t('acronym') %>:</strong>
+    <%= coin.acronym %>
+  </p>
+
+  <p>
+    <strong><%= t('url_image') %>:</strong>
+    <%= image_tag coin.url_image, size: 25 %>
+  </p>
+
+   <p>
+    <strong><%= t('mining_type') %>:</strong>
+    <%= coin.mining_type.description %>
+  </p>
+
+</div>
